@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 
 <html>
+
 	<head>
+
 		<meta charset="UTF-8">
-		<title>SVG Shapes</title>
+		<title>SVG Shapes, Forked and Edited</title>
+
 		<style>
 			#container {
 				width: 550px;
@@ -19,57 +22,127 @@
 			}
 
 			rect {
-				fill: url(#gradient3);
-				opacity: 0.8;
-			}
-
-			circle {
 				fill: url(#gradient1);
 				opacity: 0.8;
 			}
 
-			polygon {
+			rect:hover{
+				fill: url(#gradient3);
+				opacity:0.8;
+				transform: rotateY(90deg);
+				-webkit-transform: rotateY(90deg);
+			}
+
+			rect:active{
+				fill:url(#gradient4);
+				opacity:0.5;
+			}
+
+			circle {
 				fill: url(#gradient2);
 				opacity: 0.8;
+				transition: all 1s ease 250ms;
 			}
+
+			circle:hover{
+				fill: url(#gradient3);
+				opacity:0.8;
+				transform: translateX(0px) rotate(360deg);
+				-webkit-transform: translateX(0px) rotate(360deg);
+			}
+
+			circle:active{
+				fill: url(#gradient5);
+				opacity:0.5;
+			}
+
+			h1, h2{
+				font-family: georgia, arial, serif;
+			}
+
+			h1{
+				font-size: 2em;
+				letter-spacing: 0.2em;
+				font-weight: normal;
+				text-align: center;
+			}
+
+			h2{
+				font-size: 1.2em;
+				letter-spacing: 0.2em;
+				font-weight: normal;
+				text-align: center;
+			}
+
+			rect {
+				position: absolute;
+				width: 200px;
+				transform-style: preserve-3d;
+				-webkit-transform-style: preserve-3d;
+				transition-property: transform;
+				transition-duration: 2s;
+			}
+
 		</style>
 	</head>
 
 	<body>
 		<div id="container">
+			<header id="header">
+				<h1 class="title">Bring Life to Black & White</h1>
+				<h2 class="subtitle">Roll your mouse over the shapes.</h2>
+			</header>
+
 			<div id="shapes">
 				<svg width="550" height="300">
 					<defs>
 						<linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
-							<stop offset="0%" stop-color="cyan" />
-							<stop offset="100%" stop-color="yellow" />
+							<stop offset="0%" stop-color="white" />
+							<stop offset="100%" stop-color="black" />
 						</linearGradient>
 					</defs>
-					
+
 					<defs>
 						<linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-							<stop offset="0%" stop-color="magenta" />
-							<stop offset="100%" stop-color="cyan" />
+							<stop offset="0%" stop-color="black" />
+							<stop offset="100%" stop-color="white" />
 						</linearGradient>
 					</defs>
-					
+
 					<defs>
 						<linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="0%">
-							<stop offset="0%" stop-color="yellow" />
+							<stop offset="0%" stop-color="purple" />
+							<stop offset="20%" stop-color="cyan" />
+							<stop offset="40%" stop-color="green" />
+							<stop offset="60%" stop-color="yellow" />
+							<stop offset="80%" stop-color="orange" />
 							<stop offset="100%" stop-color="magenta" />
 						</linearGradient>
 					</defs>
 
-					<!-- Square -->
-					<rect x="30" y="30" width="240" height="240" />
+					<defs>
+						<linearGradient id="gradient4" x1="0%" y1="0%" x2="100%" y2="0%">
+							<stop offset="0%" stop-color="purple" />
+							<stop offset="100%" stop-color="white" />
+						</linearGradient>
+
+					</defs>
+
+					<defs>
+						<linearGradient id="gradient5" x1="0%" y1="0%" x2="100%" y2="0%">
+							<stop offset="0%" stop-color="magenta" />
+							<stop offset="100%" stop-color="white" />
+						</linearGradient>
+					</defs>
+
+					<rect x="10" y="30" width="240" height="240" />
 					
-					<!-- Circle -->
-					<circle cx="270" cy="150" r="120" />
+					<circle cx="400" cy="150" r="120" />
 					
-					<!-- Triangle -->
-					<polygon points="400,30 270,270 520,270" />
 				</svg>
+
 			</div>
+
 		</div>
 	</body>
 
